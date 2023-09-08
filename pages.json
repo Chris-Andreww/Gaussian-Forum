@@ -1,0 +1,211 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "高斯论坛",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/self/self",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/edit/edit",
+			"style": {
+				"navigationBarTitleText": "发布文章",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile",
+			"style": {
+				"navigationBarTitleText": "绑定手机号码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-withpwd",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-smscode",
+			"style": {
+				"navigationBarTitleText": "手机验证码登录"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register-by-email",
+			"style": {
+				"navigationBarTitleText": "邮箱验证码注册"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/retrieve/retrieve",
+			"style": {
+				"navigationBarTitleText": "重置密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
+			"style": {
+				"navigationBarTitleText": "通过邮箱重置密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/common/webview/webview",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "修改密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register-admin",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "注册管理员账号"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "设置密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "实名认证"
+			}
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情页",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/article/list",
+			"style": {
+				"navigationBarTitleText": "我的文章列表"
+			}
+		}, {
+			"path": "pages/article_like/list",
+			"style": {
+				"navigationBarTitleText": "我的点赞列表"
+			}
+		}, {
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
+		}, {
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/list",
+			"style": {
+				"navigationBarTitleText": "意见反馈列表",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/detail",
+			"style": {
+				"navigationBarTitleText": "意见反馈详情"
+			}
+		}, {
+			"path": "pages/reply/reply",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/article_delete/list",
+			"style": {
+				"navigationBarTitleText": "已删除的文章",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/article_comment/list",
+			"style": {
+				"navigationBarTitleText": "历史评论",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/about/about",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关于",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "圈子",
+		"navigationBarBackgroundColor": "#0199FE",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "",
+		"selectedColor": "#0199FE",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "圈子",
+			"iconPath": "static/images/quanzi.png",
+			"selectedIconPath": "static/images/quanzi-fill.png"
+		}, {
+			"pagePath": "pages/self/self",
+			"text": "我的",
+			"iconPath": "static/images/user.png",
+			"selectedIconPath": "static/images/user-fill.png"
+		}]
+	},
+	"uniIdRouter": {
+		"loginPage": "/uni_modules/uni-id-pages/pages/login/login-withpwd", // 登录页面路径
+		"needLogin": [
+			"/pages/edit/edit", // 需要登录才可访问的页面列表，可以使用正则语法
+			"/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+		],
+		"resToLogin": true // 自动解析云对象及clientDB的错误码，如果是客户端token不正确或token过期则自动跳转配置的登录页面，配置为false则关闭此行为，默认true
+	},
+	"globalPath": {
+		"myListPage": "/pages/article/list",
+		"myLikePage": "/pages/article_like/list",
+		"myDelPage": "/pages/article_delete/list",
+		"myCommentPage": "/pages/article_comment/list",
+		"feedBackPage": "/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
+		"showUserFeedBack": "/uni_modules/uni-feedback/pages/opendb-feedback/list"
+	}
+}
