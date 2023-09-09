@@ -1,16 +1,21 @@
 <template>
 	<view class="home">
-		<view class="topnav">
-			<u-tabs :list="navlist" :activeStyle="{
-				color:'#333',
-				fontWeight:'bold',
-				transform:'scale(1.05)'
-			}" :inactiveStyle="{
-				color:'#888',
-				transform:'scale(1)'
-			}" @change="clickNav"></u-tabs>
+		<view class="navbar">
+			<uni-search-bar radius="100" placeholder="搜索内容" v-model="searchInput" @confirm="search"></uni-search-bar>
+			<view>
+				<u-tabs :list="navlist" :activeStyle="{
+					color:'#333',
+					fontWeight:'bold',
+					transform:'scale(1.05)'
+				}" :inactiveStyle="{
+					color:'#888',
+					transform:'scale(1)'
+				}" @change="clickNav"></u-tabs>
+			</view>
 		</view>
-
+		<!-- 该元素用来解决上面元素使用fixed绝对定位后影响下方盒子的情况 -->
+		<view class="navbarBox"></view>
+		
 		<view>
 			<u-skeleton rows="3" title :loading="loading"></u-skeleton>
 		</view>
@@ -30,7 +35,7 @@
 		</view>
 
 		<view>
-			<uni-load-more :showText="loading" :status="loadingState" v-if="!loading" />
+			<uni-load-more :status="loadingState" v-if="!loading" />
 		</view>
 
 		<view class="edit" @click="goEdit">
@@ -57,6 +62,7 @@
 	export default {
 		data() {
 			return {
+				searchInput:'',
 				loadingState: "more",
 				navlist: [{
 						name: "最新",
@@ -85,6 +91,11 @@
 			this.getData()
 		},
 		methods: {
+			search(e){
+				uni.navigateTo({
+					url: '/pages/search/search?search=' + this.searchInput
+				})
+			},
 			clickNav(e) {
 				this.loading = true
 				this.dataList = []
@@ -189,8 +200,18 @@
 
 <style lang="scss" scoped>
 	.home {
-		.topnav {
-			margin-bottom: 30rpx;
+		.navbar {
+			position: fixed;
+			width: 100%;
+			background-color: #ffffff;
+			margin-bottom: 100rpx;
+			z-index: 9;
+		}
+		.navbarBox{
+			width: 100%;
+			height: 80rpx;
+			background-color: #ffffff;
+			margin-bottom: 100rpx;
 		}
 
 		.content {
