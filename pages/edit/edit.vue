@@ -48,21 +48,35 @@
 					description: "",
 					picurls: "",
 					province: ""
-				}
+				},
+				artId: ''
 			};
 		},
 
-		onLoad() {
+		onLoad(e) {
+			this.artId = e.id
 			getProvince().then(res => {
 				this.artObj.province = res
 			})
+			this.getData()
 		},
 
 		methods: {
 			inputChange(e) {
 				if (e.detail.text != '\n') {
 					this.submitShow = true
-				}else this.submitShow = false
+				} else this.submitShow = false
+			},
+			async getData() {
+				if (this.artId == 0) {
+					return
+				}
+				let res = await db.collection('article')
+					.doc(this.artId).field('title,content').get()
+				this.artObj.title = res.result.data[0].title
+				this.editorCtx.setContents({
+					html: res.result.data[0].content
+				})
 			},
 			//点击提交按钮
 			onSubmit() {
@@ -74,11 +88,26 @@
 						uni.showLoading({
 							title: "发布中..."
 						})
-						this.addData();
+						if (this.artId == 0) {
+							this.addData();
+						} else this.updateData()
 					}
 				})
 			},
-
+			async updateData() {
+				await db.collection('article').doc(this.artId).update({
+					...this.artObj
+				})
+				uni.hideLoading();
+				uni.showToast({
+					title: "修改成功"
+				})
+				setTimeout(() => {
+					uni.reLaunch({
+						url: "/pages/index/index"
+					})
+				}, 1500)
+			},
 			addData() {
 				db.collection("article").add({
 					...this.artObj
